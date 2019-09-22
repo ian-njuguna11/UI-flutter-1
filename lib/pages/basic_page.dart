@@ -29,9 +29,9 @@ class BasicPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                _iconText(Icons.call, 'CALL'),
-                _iconText(Icons.gps_fixed, 'ROUTE'),
-                _iconText(Icons.share, 'SHARE')
+                _iconText(context, Icons.call, 'CALL'),
+                _iconText(context, Icons.gps_fixed, 'ROUTE'),
+                _iconText(context, Icons.share, 'SHARE')
               ],
             ),
             Padding(
@@ -49,13 +49,18 @@ class BasicPage extends StatelessWidget {
     );
   }
 
-  Widget _iconText(IconData icon, String text) {
+  Widget _iconText(BuildContext context, IconData icon, String text) {
     return Column(
       children: <Widget>[
-        Icon(
-          icon,
-          color: Colors.blue,
-          size: 25.0,
+        IconButton(
+          icon: Icon(
+            icon,
+            color: Colors.blue,
+            size: 25.0,
+          ),
+          onPressed: () {
+            Navigator.pushNamed(context, 'full');
+          },
         ),
         SizedBox(
           height: 10.0,

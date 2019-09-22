@@ -17,7 +17,7 @@ class ScrollPage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         children: <Widget>[
           _page1(),
-          _page2(),
+          _page2(context),
         ],
       ),
     );
@@ -27,11 +27,7 @@ class ScrollPage extends StatelessWidget {
   ///
   Widget _page1() {
     return Stack(
-      children: <Widget>[
-        _colorFondo(),
-        _imageFondo(),
-        DigitalClock()
-      ],
+      children: <Widget>[_colorFondo(), _imageFondo(), DigitalClock()],
     );
   }
 
@@ -56,7 +52,7 @@ class ScrollPage extends StatelessWidget {
 
   ////
 
-  Widget _page2() {
+  Widget _page2(BuildContext context) {
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -75,7 +71,9 @@ class ScrollPage extends StatelessWidget {
               ),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, 'full');
+          },
         ),
       ),
     );

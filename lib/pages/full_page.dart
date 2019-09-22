@@ -119,15 +119,30 @@ class FullPage extends StatelessWidget {
       child: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today, size: 25.0),
+            icon: IconButton(
+              icon: Icon(Icons.fullscreen, size: 25.0),
+              onPressed: () {
+                 Navigator.pushNamed(context, 'full');
+              },
+            ),
             title: Container(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.gps_fixed, size: 25.0),
+            icon: IconButton(
+              icon: Icon(Icons.scatter_plot, size: 25.0),
+              onPressed: () {
+                 Navigator.pushNamed(context, 'scroll');
+              },
+            ),
             title: Container(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.hotel, size: 25.0),
+            icon: IconButton(
+              icon: Icon(Icons.battery_std, size: 25.0),
+              onPressed: () {
+                Navigator.pushNamed(context, 'basic');
+              },
+            ),
             title: Container(),
           )
         ],
