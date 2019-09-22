@@ -1,6 +1,6 @@
 # design_01
 
-A new Flutter project.
+3 UI pages in flutter
 
 ## Getting Started
 
